@@ -8,15 +8,18 @@ import Create from "./Components/Create/Create";
 import Profile from "./Components/Profile/Profile";
 import Talent from "./Components/Profile/Talent";
 import UserState from "./Context/UserState";
+import {Header} from "./Components/LandingPage/Header";
+import {HomePage} from "./Components/LandingPage/HomePage";
 
 function App() {
   return (
     <div style={{ position: "relative" }}>
       <HashRouter>
         <UserState>
-          <Navbar />
+          <Header />
+          {/* <Navbar /> */}
           <Routes>
-            <Route path="/" element={<Login />} />
+            <Route path="/" element={<HomePage />} />
             <Route path="/explore" element={<Categories />} />
             <Route path="/createtalent" element={<Create />} />
             <Route path="/profile" element={<Profile />} />

@@ -1,0 +1,26 @@
+.videocontainer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    color: rgb(237, 234, 234);
+  }
+  
+  .videopostercontainer {
+    padding: 20px 20px 0px 20px;
+    display: flex;
+    margin-bottom: 25px;
+    color: rgb(237, 234, 234);
+  }
+  
+  .videocontainer img {
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+    margin-right: 10px;
+    color: rgb(237, 234, 234);
+  }
+  .profileimage{
+    height: 50px;
+    width: 50px;
+  }

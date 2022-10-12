@@ -1,9 +1,12 @@
 import React from 'react'
-import {Box, Typography, Button,TextField} from "@mui/material";
+import {Box,Tab,Tabs, Typography, Button,TextField} from "@mui/material";
 import { useState } from "react";
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import EmailIcon from '@mui/icons-material/Email';
+import { Divider } from '@mui/material';
+import BITlogo from "../../Images/BITlogo.png";
 // import "./Login.css"
+import "./Footer.css"
 
 
 
@@ -64,12 +67,13 @@ const handleSubmit = (e) => {
               margin="auto"
               marginTop={5}
               borderRadius={5}
+              marginRight={5}
             >
               <Typography
                 fontFamily={"ui-monospace"}
                 variant="h5"
                 padding={3}
-                textAlign={"center"}
+                marginRight={30}
               >
                 Contact Us
               </Typography>
@@ -104,7 +108,7 @@ const handleSubmit = (e) => {
               <Button
                 type="submit"
                 variant="contained"
-                sx={{ borderRadius: 3, marginTop: 3 }}
+                sx={{ borderRadius: 1, marginTop: 3 ,marginRight: 23.5}}
                 color="warning"
               >
                 Send Message
@@ -119,8 +123,9 @@ const handleSubmit = (e) => {
           <Typography
             fontFamily={"ui-monospace"}
             variant="h5"
-            padding={3}
-            textAlign={"center"}
+            padding={0}
+            marginRight={37}
+            marginBottom={3}
           >
             Contact Details
           </Typography>
@@ -149,8 +154,7 @@ const handleSubmit = (e) => {
               padding={3}
               textAlign={"center"}
             >
-              <LocalPhoneIcon style={{ marginRight: "5px" }} /> +91 1234567890
-              <br></br>
+            <LocalPhoneIcon sx={{ color: "#ED842E"}}  style={{ marginRight: "5px"}} /> +91 1234567890
             </Typography>
             <Typography
               style={{
@@ -163,7 +167,7 @@ const handleSubmit = (e) => {
               padding={3}
               textAlign={"center"}
             >
-              <LocalPhoneIcon style={{ marginRight: "5px" }} /> +91 1234567890
+              <LocalPhoneIcon sx={{ color: "#ED842E" }} style={{ marginRight: "5px" }} /> +91 1234567890
             </Typography>
             <Typography
               style={{ fontSize: "21px", fontWeight: "500" }}
@@ -172,7 +176,7 @@ const handleSubmit = (e) => {
               padding={3}
               textAlign={"center"}
             >
-              <EmailIcon style={{ marginRight: "5px" }} /> khelmanch@gmail.com
+              <EmailIcon sx={{ color: "#ED842E" }} style={{ marginRight: "5px" }} /> khelmanch@gmail.com
             </Typography>
             <Typography
               style={{ fontSize: "21px", fontWeight: "500" }}
@@ -181,7 +185,7 @@ const handleSubmit = (e) => {
               padding={3}
               textAlign={"center"}
             >
-              <EmailIcon style={{ marginRight: "5px" }} /> khelmanch@gmail.com
+              <EmailIcon sx={{ color: "#ED842E" }} style={{ marginRight: "5px" }} /> khelmanch@gmail.com
             </Typography>
           </Box>
         </Box>
@@ -195,23 +199,65 @@ const handleSubmit = (e) => {
             justifyContent: "center",
             alignItems: "center",
             flexDirection: "column",
-            marginBottom: "50px",
+            marginBottom: "0px",
+            display: "flex",
+            flexDirection: "column",
           }}
         >
           <Typography
             fontFamily={"ui-monospace"}
             variant="h5"
             padding={3}
-            textAlign={"center"}
+            marginRight={45}
           >
-            Made By{" "}
-            <img
-              src="https://beimagine.tech/wp-content/uploads/2022/04/BITlogo.png"
-              alt="BIT"
-              width="350px"
-              height="350px"
-            />
+            Important links
           </Typography>
+          <Box
+            sx={{ 
+              width: "500px",
+            }}
+            borderTop= {"1px solid"}
+          >
+            <Tabs >
+              <Tab style={{
+                    color:" #000000",
+                    fontFamaily: "Inter",
+                    fontStyle: "normal",
+                    fontWeight: "300",
+                    fontSize: "12px",
+                    color: "#fff",
+                    textDecoration:"underline"
+                }} label="Explore" />
+              <Tab
+              style={{
+                color:" #000000",
+                fontFamaily: "Inter",
+                fontStyle: "normal",
+                fontWeight: "300",
+                fontSize: "12px",
+                color: "#fff",
+                textDecoration:"underline"
+            }} label="Wallet" />
+            </Tabs>
+          </Box>
+          <Box
+          position={"relative"}
+          marginTop={35}
+          >
+            <span
+            style={{
+              fontFamily: "Inter",
+              fontStyle: "normal",
+              fontWeight: "300",
+            }}
+            >Made By</span>
+            <img
+            className="BITlogo"
+            alt="BITLOGO"
+            src={BITlogo}
+            />
+          </Box>
+ 
         </Box>
       </Box>
 

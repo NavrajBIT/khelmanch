@@ -22,6 +22,9 @@ import "./HomePage.css";
 import { Link } from 'react-router-dom';
 
 
+
+
+
 export const HomePage = () => {
 
 
@@ -236,6 +239,7 @@ export const HomePage = () => {
         >
           <Toolbar>
             <Box
+              marginTop={5}
               marginLeft={35}
               display={"flex"}
               flexDirection="row"
@@ -262,10 +266,10 @@ export const HomePage = () => {
                   alt="KhelManch"
                   src={imageSearch}
                   style={{
-                    width: "100px",
-                    height: "100px",
-                    marginLeft: "20px",
-                    marginTop: "20px",
+                    width: "150px",
+                    height: "150px",
+                    marginLeft: "10px",
+                    marginTop: "1px",
                   }}
                 />
               </Box>
@@ -275,8 +279,8 @@ export const HomePage = () => {
                   alt="KhelManch"
                   src={imaggeArrow}
                   style={{
-                    width: "70px",
-                    height: "70px",
+                    width: "45px",
+                    height: "45px",
                     marginLeft: "60px",
                     marginTop: "5px",
                   }}
@@ -303,10 +307,10 @@ export const HomePage = () => {
                   alt="KhelManch"
                   src={imagevideo}
                   style={{
-                    width: "100px",
-                    height: "100px",
-                    marginLeft: "20px",
-                    marginTop: "20px",
+                    width: "150px",
+                    height: "150px",
+                    marginLeft: "10px",
+                    marginTop: "1px",
                   }}
                 />
               </Box>
@@ -316,8 +320,8 @@ export const HomePage = () => {
                   alt="KhelManch"
                   src={imaggeArrow}
                   style={{
-                    width: "70px",
-                    height: "70px",
+                    width: "45px",
+                    height: "45px",
                     marginLeft: "60px",
                     marginTop: "5px",
                   }}
@@ -344,10 +348,10 @@ export const HomePage = () => {
                   alt="KhelManch"
                   src={imageReward}
                   style={{
-                    width: "100px",
-                    height: "100px",
-                    marginLeft: "20px",
-                    marginTop: "20px",
+                    width: "150px",
+                    height: "150px",
+                    marginLeft: "10px",
+                    marginTop: "1px",
                   }}
                 />
               </Box>
@@ -467,8 +471,10 @@ export const HomePage = () => {
             </span>
           </Typography>
 
+          {/*           
           <Button
             variant="contained"
+            disableElevation
             sx={{
               background: "white",
               color: "black",
@@ -480,7 +486,11 @@ export const HomePage = () => {
             }}
           >
             Connect your wallet
-          </Button>
+          </Button> */}
+
+          <button className="walletBtn">Connect your wallet</button>
+          {/* 
+
           <Tabs>
             <Tab
               style={{
@@ -490,7 +500,21 @@ export const HomePage = () => {
               }}
               label="Learn more about Blockchain Wallet"
             />
-          </Tabs>
+          </Tabs> */}
+          <a
+            style={{
+              color: "white",
+              fontFamily: "Product Sans",
+              fontStyle: "normal",
+              cursor: "pointer",
+              textDecoration: "none",
+            }}
+          >
+            Learn more about{" "}
+            <span style={{ textDecoration: "underline" }}>
+              Blockchain Wallet
+            </span>
+          </a>
         </Box>
 
         <Box
@@ -620,7 +644,7 @@ export const HomePage = () => {
         <Button
           LinkComponent={Link}
           to="/explore"
-          variant="contained"
+          variant="outlined"
           sx={{
             marginTop: "20px",
             background: "white",
@@ -636,7 +660,7 @@ export const HomePage = () => {
             marginTop: "55px",
           }}
         >
-          Explore More
+          Explore more
         </Button>
       </Box>
     </div>

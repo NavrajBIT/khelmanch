@@ -66,6 +66,7 @@
 .talentSection {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .talent {
@@ -79,7 +80,6 @@
 .talentimage {
   width: 200px;
   height: 200px;
-  border-radius: 100px;
 }
 
 .talentimage:hover {
@@ -90,7 +90,7 @@
 .talentimage img {
   width: 100%;
   height: 100%;
-  border-radius: 100px;
+  border-radius: 10px;
 }
 
 .profilefunctionality {

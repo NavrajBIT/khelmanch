@@ -2,6 +2,18 @@ import React, { useContext, useState } from "react";
 import "./Profile.css";
 import { useNavigate } from "react-router-dom";
 import KhelVideo from "../Video/KhelVideo";
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
+import EditIcon from '@mui/icons-material/Edit';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
+import IconButton from '@mui/material/IconButton';
+import { Button ,Link,Tab,Tabs} from "@mui/material";
+
+import UserContext from "../../Context/UserContext";
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 
 export const Talent = () => {
   const [isEditting, setIsEditting] = useState(false);
@@ -161,39 +173,122 @@ export const Talent = () => {
 
   return (
     <>
-      <div className="profilepage">
-        <div className="profileSection">
-          <div className="imageSection">
-            <img src={profileUrl} alt="" />
-          </div>
-          <div className="dataSection">
-            <h1>Mahender Singh</h1>
-            <h2>Hockey Player</h2>
-            <div className="playerdetails">
-              <h3>Gender:</h3>
-              <h3>Male</h3>
-            </div>
-            <div className="playerdetails">
-              <h3>Father&apos;s Name:</h3>
-              <h3> Jitender Singh</h3>
-            </div>
-            <div className="playerdetails">
-              <h3>Mother&apos;s Name:</h3>
-              <h3>Suneeta Kaur</h3>
-            </div>
-
-            <div className="playerdetails">
-              <h3>Added by:</h3>
-              <a
-                onClick={() => {
-                  navigate("/profile");
+            <Box
+          sx={{
+            width: "100%",
+            height: "548px",
+            margin: "auto",
+            marginTop: 200,
+            positions: "absolute",
+            mt: 10,
+            padding: "20px",
+            background: "#262626",
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-between",
+          }}
+        >
+          <Box>
+          <img
+                alt="Coach Profile"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGFAN7UKvo70IZwE_E99S4EiidVvU9BufSbQ&usqp=CAU"
+                style={{
+                  width: "540px",
+                  height: "478px",
+                  marginLeft: "20px",
+                  marginTop: "20px",
+                  borderRadius: "10px",
                 }}
-              >
-                Coach Priti Kaur
-              </a>
-            </div>
+              />
+          </Box>
 
-            <h3>
+          <Box
+          marginLeft={10}
+          display="flex"
+          flexDirection="column"
+          >
+            <Box
+            marginTop={5}
+            display="flex"
+            flexDirection="row"
+            >
+              <Typography
+                fontFamily={"Inter"}
+                fontWeight="700"
+                fontSize="50px"
+              ><span style={{color:"#FE8D32"}}>Mahender Singh</span></Typography>
+              <Box
+                width={100}
+                height={30}
+                marginLeft={5}
+                marginTop={3}
+    
+                textAlign="justify"
+                border="2px solid #FFFFFF"
+                borderRadius="10px"
+                padding="0px"
+                paddingBottom={4}
+                alignItems={"center"}
+                >
+              <Typography
+                color="#FFFFFF"
+                marginBottom={2}
+                marginLeft={1.5}
+                fontFamily={"Inter"}
+                fontWeight="600"
+                fontSize="20px"
+              >Hockey</Typography>
+              </Box>
+              <Box
+              marginTop={2.3}
+              marginLeft={70}
+              >
+                <IconButton>
+                  <EditIcon
+                  sx={{ color:  "rgba(255, 255, 255, 0.7)",border: "1px solid rgba(255, 255, 255, 0.7)",borderRadius: "100px",padding: "5px",}}
+                  fontSize="large" 
+                  />
+                </IconButton>
+                <IconButton>
+                  <MoreVertIcon
+                  fontSize="large"
+                  sx={{ color: "rgba(255, 255, 255, 0.7)",border: "1px solid rgba(255, 255, 255, 0.7)",borderRadius: "100px",padding: "5px" }}
+                   />
+                </IconButton>
+              </Box>
+            </Box>
+
+            <Box
+            marginTop={5}
+            display={"flex"}
+            flexDirection={"row"}
+    
+            >
+              <Typography
+                fontFamily={"Inter"}
+                fontWeight="500"
+                fontSize="18px"
+                lineHeight={"30.26px"}
+                color={"white"}
+              >
+                <span style={{color:"rgba(255, 255, 255, 0.80)"}}>Gender : </span>Male <br />
+                <span style={{color:"rgba(255, 255, 255, 0.80)"}}>Father’s Name :</span> Jitender Singh <br />
+                <span style={{color:"rgba(255, 255, 255, 0.80)"}}>Mother's Name :</span> Suneeta Kaur <br />
+                <span style={{color:"rgba(255, 255, 255, 0.80)"}}>Added by :</span> Coach Priti Kaur
+              </Typography>
+
+            </Box>
+
+            <Box>
+              <Typography
+                fontFamily={"Inter"}
+                fontWeight="400"
+                fontSize="21.2px"
+                lineHeight={"30.26px"}
+                color={"rgba(255, 255, 255, 0.8)"}
+                marginTop={5}
+                style={{textAlign:"justify"}}
+              >
               The difference between the old ballplayer and the new ballplayer
               is the jersey. The old ballplayer cared about the name on the
               front. The new ballplayer cares about the name on the back."
@@ -204,30 +299,109 @@ export const Talent = () => {
               feel there is to lose. A champion is afraid of losing. Everyone
               else is afraid of winning. A snooker game mixes ritual with
               geometry
-            </h3>
-            <button onClick={() => setIsEditting(true)}>
-              <h2>Edit Profile</h2>
-            </button>
-          </div>
-        </div>
-        {isEditting && <EditProfile />}
+              </Typography>
+            </Box>
 
-        <div className="videoSection">
-          {videosData.map((video) => {
-            return (
-              <div className="videocontainer" key={video.title}>
-                <KhelVideo
-                  src={video.src}
-                  title={"Mahender Singh playing Hockey"}
-                  player={"Mahender Singh"}
-                  sport={"Hockey"}
-                  rating="3.5"
-                />
-              </div>
-            );
-          })}
-        </div>
-      </div>
+            
+          </Box>
+
+        </Box>
+        
+        <Box
+        width={1700}
+        marginLeft={13}
+        marginTop={10}
+        display={"flex"}
+        flexDirection={"row"}
+        justifyContent={"space-between"}
+        paddingBottom={2}
+        >
+              
+          <Box
+          width={600}
+          marginLeft={70}
+          marginTop={10}
+          display={"flex"}
+          flexDirection={"row"}
+          justifyContent={"space-between"}
+          borderBottom={"3px solid #FE8D32"}
+          paddingBottom={2}
+          >
+          <Typography
+            fontFamily={"Inter"}
+            marginLeft={12}
+            fontStyle="normal"
+            fontWeight="600"
+            fontSize="35px"
+            lineHeight={"42px"}
+          >
+          Mahender Singh’s Playlist
+          </Typography>
+          </Box>
+        </Box>
+
+
+        <Box
+            sx={{
+            width: "1700px",
+            height: "548px",
+            margin: "auto",
+            positions: "absolute",
+            padding: "10px",
+            marginBottom: "700px",
+          }}
+        >
+  
+            <div className="videoSection">
+              {videosData.map((video) => {
+                return (
+                  <Box
+                  style={{
+                    border: "1px solid #000000",
+                    borderRadius: "10px",
+                    margin: "10px",
+                  }}
+                >
+                  <div className="videocontainer" key={video.title}>
+                    <span style={{color:'black'}}><KhelVideo
+                      src={video.src}
+                      title={video.title}
+                      player={video.name}
+                      sport={video.sport}
+                      rating="3.5"
+                    /></span>
+                  </div>
+                  </Box>
+                );
+              })}
+            </div>
+      
+
+        </Box>
+        <Button
+          LinkComponent={Link}
+          to="/explore"
+          variant="outlined"
+          sx={{
+            marginTop: "20px",
+            background: "white",
+            color: "black",
+            fontWeight: "bold",
+            fontFamily: "Product Sans",
+            fontStyle: "normal",
+            alignItems: "center",
+            marginLeft: "850px",
+            height: "50px",
+            width: "250px",
+            borderRadius: "10px",
+            border: "2px solid black",
+            marginTop: "55px",
+          }}
+        >
+          Load more
+        </Button>
+
+      
     </>
   );
 };

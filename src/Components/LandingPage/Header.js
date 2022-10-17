@@ -7,6 +7,7 @@ import "./Header.css";
 import { useState } from 'react';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import { Link } from 'react-router-dom';
+import IconButton from '@mui/material/IconButton';
 
 
 
@@ -58,10 +59,16 @@ export const Header = () => {
               />
               <Tab style={tabsStyle} label="WALLET" />
               <Tab style={tabsStyle} label="CONTACT" />
+              <IconButton
+              LinkComponent={Link}
+                to="/profile"
+              >
               <AccountCircleOutlinedIcon
+
                 fontSize="large"
                 sx={{ marginTop: "9px", marginLeft: "15px" }}
               />
+              </IconButton>
             </Tabs>
           </Box>
         </Toolbar>

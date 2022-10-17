@@ -37,7 +37,7 @@ const KhelVideo = (props) => {
               {props.player}
             </a>
           </div>
-          <div>{props.sport}</div>
+          <div className="sportname">{props.sport}</div>
         </div>
 
         <div className="ratinginfo">

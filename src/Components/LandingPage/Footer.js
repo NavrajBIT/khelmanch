@@ -31,6 +31,7 @@ export const Footer = () => {
           width: "100%",
           height: "500px",
           display: "flex",
+          position:"absolute",
           justifyContent: "center",
           alignItems: "center",
           background: "#3b3737",

@@ -10,6 +10,8 @@ import Talent from "./Components/Profile/Talent";
 import UserState from "./Context/UserState";
 import {Header} from "./Components/LandingPage/Header";
 import {HomePage} from "./Components/LandingPage/HomePage";
+import {AddVideo} from "./Components/Profile/AddVideo";
+import {AddPlayer} from "./Components/Profile/AddPlayer";
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
             <Route path="/explore" element={<Categories />} />
             <Route path="/createtalent" element={<Create />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/addvideo" element={<AddVideo />} />
+            <Route path="/addplayer" element={<AddPlayer />} />
             <Route path="/talent" element={<Talent />} />
           </Routes>
           <Footer />

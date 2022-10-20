@@ -1,14 +1,13 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { HashRouter } from "react-router-dom";
 import Login from "./Components/LoginPage/Login";
-import Navbar from "./Components/Navbar/Navbar";
+import {Navbar} from "./Components/Navbar/Navbar";
 import Footer from "./Components/Footer/Footer";
 import Categories from "./Components/Categories/Categories";
 import Create from "./Components/Create/Create";
 import Profile from "./Components/Profile/Profile";
 import Talent from "./Components/Profile/Talent";
 import UserState from "./Context/UserState";
-import {Header} from "./Components/LandingPage/Header";
 import {HomePage} from "./Components/LandingPage/HomePage";
 import {AddVideo} from "./Components/Profile/AddVideo";
 import {AddPlayer} from "./Components/Profile/AddPlayer";
@@ -18,8 +17,7 @@ function App() {
     <div style={{ position: "relative" }}>
       <HashRouter>
         <UserState>
-          <Header />
-          {/* <Navbar /> */}
+          <Navbar />
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/explore" element={<Categories />} />

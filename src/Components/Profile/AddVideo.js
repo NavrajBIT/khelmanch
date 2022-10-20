@@ -40,27 +40,8 @@ export const AddVideo = () => {
         </Box>
 
         <Box>
-            <Box
-            width={1127}
-            height={556}
-            display={"flex"}
-            flexDirection={"column"}
-            justifyContent={"center"}
-            alignItems={"center"}
-            style={{borderRadius: "10px", border: "1px solid black", marginTop: "50px",
-            backgroundColor:"rgba(0, 0, 0, 0.05)",
-            marginLeft: "400px"}}
-             >
-            <Typography
-                variant="h4"
-                fontFamily={"inherit"}
-                fontStyle="normal"
-                fontWeight="600"
-                fontSize="35px"
-                lineHeight={"42px"}
-                color={"#FE8D32"}
-                marginBottom={3}
-            >
+            <Box width={1127} height={556} display={"flex"} flexDirection={"column"} justifyContent={"center"} alignItems={"center"} style={{borderRadius: "10px", border: "1px solid black", marginTop: "50px", backgroundColor:"rgba(0, 0, 0, 0.05)", marginLeft: "400px"}} >
+            <Typography variant="h4" fontFamily={"inherit"} fontStyle="normal" fontWeight="600" fontSize="35px" lineHeight={"42px"} color={"#FE8D32"} marginBottom={3} >
             Upload Video File
             </Typography>
             <Box marginLeft={12}>
@@ -73,55 +54,22 @@ export const AddVideo = () => {
              </Box>
 
         </Box>
-        <Box
-        marginLeft={53}
-        marginTop={10}
-        >
-        <Typography
-        fontFamily={"inherit"}
-        fontStyle="normal"
-        fontWeight="600"
-        fontSize="25px"
-        lineHeight={"42px"}
-        color={"black"}
-        >
+        <Box marginLeft={53} marginTop={10} >
+        <Typography fontFamily={"inherit"} fontStyle="normal" fontWeight="600" fontSize="25px" lineHeight={"42px"} color={"black"} >
         Video Title</Typography>
-        <textarea
-                style={{height: "178px", width: "1121px",borderRadius: "10px", border: "2px solid black", marginTop: "5px", }}
-                name="message"
-                onChange={(e) => {}}
-                value={''}
-                type="text"
-                placeholder="Enter Video Title here"
-                margin="normal"
-              >
+        <textarea style={{height: "178px", width: "1121px",borderRadius: "10px", border: "2px solid black", marginTop: "5px", }} name="message" onChange={(e) => {}} value={''} type="text" placeholder="Enter Video Title here" margin="normal" >
 
         </textarea>
         </Box>
 
-        <Box
-        width={900}
-        marginLeft={60}
-        marginTop={10}
-        display={"flex"}
-        flexDirection={"row"}
-        justifyContent={"space-between"}
-
-        >
+        <Box width={900} marginLeft={60} marginTop={10} display={"flex"} flexDirection={"row"} justifyContent={"space-between"} >
             <Box>
                 <Typography
                 variant="h5"
                 >Sports</Typography>
                 <FormControl fullWidth>
                 <InputLabel id="demo-simple-select-label"> Select Sports</InputLabel>
-                <Select
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
-                    style={{width: "200px", height: "50px", borderRadius: "10px", border: "2px solid black", marginTop: "5px", }}
-                    value={''}
-                    label="Sort by"
-                    onChange={(e) => {}}
-                >
+                <Select labelId="demo-simple-select-label" id="demo-simple-select" style={{width: "200px", height: "50px", borderRadius: "10px", border: "2px solid black", marginTop: "5px", }} value={''} label="Sort by" onChange={(e) => {}} >
                     <MenuItem value={"Recent"}>Recent</MenuItem>
                     <MenuItem value={"Newer"}>Newer</MenuItem>
                     <MenuItem value={"Long"}>Long</MenuItem>
@@ -134,14 +82,7 @@ export const AddVideo = () => {
                 >Player</Typography>
                 <FormControl fullWidth>
                 <InputLabel id="demo-simple-select-label">Select Player</InputLabel>
-                <Select
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
-                    style={{width: "200px",height: "50px", borderRadius: "10px", border: "2px solid black", marginTop: "5px", }}
-                    value={''}
-                    label="Sort by"
-                    onChange={(e) => {}}
-                >
+                <Select labelId="demo-simple-select-label" id="demo-simple-select" style={{width: "200px",height: "50px", borderRadius: "10px", border: "2px solid black", marginTop: "5px", }} value={''} label="Sort by" onChange={(e) => {}} >
                     <MenuItem value={"Recent"}>Recent</MenuItem>
                     <MenuItem value={"Newer"}>Newer</MenuItem>
                     <MenuItem value={"Long"}>Long</MenuItem>
@@ -149,21 +90,7 @@ export const AddVideo = () => {
                 </FormControl>
             </Box>
         </Box>
-        <Button
-          variant="contained"
-          color="warning"
-          sx={{
-            marginTop: "80px",
-            fontWeight: "bold",
-            fontFamily: "Inter",
-            fontStyle: "normal",
-            marginLeft: "850px",
-            height: "50px",
-            width: "250px",
-            borderRadius: "50px",
-            marginTop: "55px",
-          }}
-        >
+        <Button variant="contained" color="warning" sx={{ marginTop: "80px", fontWeight: "bold", fontFamily: "Inter", fontStyle: "normal", marginLeft: "850px", height: "50px", width: "250px", borderRadius: "50px", marginTop: "55px", }} >
           Upload
         </Button>
     </div>

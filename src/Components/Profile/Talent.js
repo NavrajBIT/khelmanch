@@ -19,7 +19,7 @@ export const Talent = () => {
 
   return (
     <>
-            <Box sx={{ width: "100%", height: "548px", margin: "auto", marginTop: 200, positions: "absolute", mt: 10, padding: "20px", background: "#262626", display: "flex", flexDirection: "row", justifyContent: "space-between", }} >
+          <Box sx={{ width: "100%", height: "548px", margin: "auto", marginTop: 200, positions: "absolute", mt: 10, padding: "20px", background: "#262626", display: "flex", flexDirection: "row", justifyContent: "space-between", }} >
           <Box>
           <img alt="Coach Profile" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGFAN7UKvo70IZwE_E99S4EiidVvU9BufSbQ&usqp=CAU" style={{ width: "540px", height: "478px", marginLeft: "20px", marginTop: "20px", borderRadius: "10px", }} />
           </Box>
@@ -83,8 +83,6 @@ export const Talent = () => {
         <Box sx={{ width: "1700px", height: "548px", margin: "auto", positions: "absolute", padding: "10px", marginBottom: "700px", }} >
   
             <VideoCard />
-      
-
         </Box>
         <Button LinkComponent={Link} to="/explore" variant="outlined" sx={{ marginTop: "20px", background: "white", color: "black", fontWeight: "bold", fontFamily: "Product Sans", fontStyle: "normal", alignItems: "center", marginLeft: "850px", height: "50px", width: "250px", borderRadius: "10px", border: "2px solid black", marginTop: "55px", }} >
           Load more

@@ -5,6 +5,8 @@ import { Typography, Box ,Button} from '@mui/material';
 import { useNavigate } from "react-router-dom";
 import Rating from '@mui/material/Rating';
 import Stack from '@mui/material/Stack';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTheme } from '@mui/material/styles';
 
 const KhelVideo = (props) => {
   const navigate = useNavigate();
@@ -14,14 +16,16 @@ const KhelVideo = (props) => {
     margin: "0px",
     marginTop: "10px",
   }
-
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.down('md'));
+  const iframeStyle = matches ? {width: "270px",height: "150px",} : {width:"420px",height:"236px"}
+  const mainBoxStyle = matches ? { margin: "0px 20px", display: "flex", flexDirection: "column", width: "280px"}:{ margin: "0px 20px", display: "flex", flexDirection: "column", width: "420px"}
   return (
     <>
-  <Box style={ { margin: "0px 20px", display: "flex", flexDirection: "column", width: "420px"}}>
+  <Box style={mainBoxStyle}>
       <Box>
         <iframe
-          width="420"
-          height="236"
+          style={iframeStyle}
           src={props.src}
           title={props.title}
           frameBorder="0"
@@ -31,9 +35,10 @@ const KhelVideo = (props) => {
       </Box>
 
      <Box style={{ display:" grid", gridTemplateColumns: "2fr 1fr", alignItems: "center" }} >
-        <h3>{props.title}</h3>
+          {!matches && <h3>{props.title}</h3> }
+          {matches && <h4>{props.title}</h4> }
         <Box style={{ display: "flex", alignItems: "center", justifyContent: "right",}}>
-          301,012
+          30K
           <img style={{ height: "20px", width: "20px", margin: "0px 0px 0px 10px", padding: "0px", justifyContent: "center", }} src={viewIcon} alt="" />
         </Box>
       </Box>  
@@ -56,9 +61,9 @@ const KhelVideo = (props) => {
         <Box mt="30px" marginLeft={"20px"} style={{textAlign:"right"}}>
           <Box display="flex" flexDirection={"row"}>
             <Stack spacing={1}>
-              <Rating  name="half-rating-read" defaultValue={props.rating} precision={0.5} readOnly />
+              <Rating name="half-rating-read" defaultValue={props.rating} precision={0.5} readOnly />
           </Stack>
-            <Typography mt='3px' marginLeft={"20px"}>{props.rating}/5</Typography>
+            {! matches && <Typography mt='3px' marginLeft={"20px"}>{props.rating}/5</Typography>}
         </Box>
         </Box>
       </Box>

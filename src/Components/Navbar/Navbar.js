@@ -6,6 +6,9 @@ import { useState } from 'react';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import { Link } from 'react-router-dom';
 import IconButton from '@mui/material/IconButton';
+import { DrawerComp } from './DrawerComp';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTheme } from '@mui/material/styles';
 
 
 
@@ -14,7 +17,13 @@ export const Navbar = () => {
  
   const navigate = useNavigate();
 
-  const [value, setValue] = useState();
+  const [value, setValue] = useState(0);
+
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.down('md'));
+
+
+  const [ProfileIconColor, setProfileIconColor] = useState("black");
 
     const tabsStyle = {
         color:" #000000",
@@ -24,8 +33,21 @@ export const Navbar = () => {
         fontSize: "22px",
     }
 
+    const logoStyle = matches ? {width: "111px", height: "45px",} : {width: "233px", height: "94px"}
+
+    const handleClickProfileIcon = () => {
+      navigate('/profile');
+      setValue(null);
+      setProfileIconColor("#ED842E");
+    };
+
+    const handleChangeforTabs = (event, newValue) => {
+      setValue(newValue);
+      setProfileIconColor("black");
+    };
+
   return (
-    <Box sx={{ flexGrow: 1, width: "auto", margin: "50px" }}>
+    <Box sx={{ flexGrow: 1, width: "auto" }}>
       <AppBar
         position="sticky"
         sx={{ background: "#fff", color: "#000", boxShadow: "none" }}
@@ -33,22 +55,23 @@ export const Navbar = () => {
         <Toolbar>
           <img
             alt="KhelManch"
-            height={"94px"}
-            width={"233px"}
+            style={logoStyle}
             onClick={() => {
               navigate("/");
             }}
             src={logo}
           />
-
-          <Box
+          {
+            matches ? (<><DrawerComp/></>):(
+            <>
+              <Box
             display="flex"
             marginLeft={"auto"}
             marginBottom="auto"
             marginTop={6}
             marginRight={"40px"}
           >
-            <Tabs value={value} onChange={(e, val) => setValue(val)}>
+            <Tabs value={value} onChange={handleChangeforTabs}>
               <Tab LinkComponent={Link} to="/" style={tabsStyle} label="Home" />
               <Tab
                 LinkComponent={Link}
@@ -59,8 +82,8 @@ export const Navbar = () => {
               <Tab style={tabsStyle} label="WALLET" />
               <Tab style={tabsStyle} label="CONTACT" />
               <IconButton
-              LinkComponent={Link}
-                to="/profile"
+              onClick={handleClickProfileIcon}
+              sx={{ color: ProfileIconColor }}
               >
               <AccountCircleOutlinedIcon
 
@@ -70,6 +93,10 @@ export const Navbar = () => {
               </IconButton>
             </Tabs>
           </Box>
+            </>)
+          }
+
+          
         </Toolbar>
       </AppBar>
     </Box>

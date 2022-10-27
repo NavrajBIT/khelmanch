@@ -43,7 +43,7 @@ export const VideoCardHome = () => {
                   <Box style={{ border: "1px solid #000000", backgroundColor:"white", borderRadius: "10px", margin: "10px", }}> 
                     <Box key={"Mahender playing Cricket"} style={{marginTop: "30px"}}>
                       <span style={{color:'black'}}><KhelVideo
-                        src={"https://www.youtube.com/embed/Ctt-tZ_9KpY"}
+                        src={"https://www.youtube.com/embed/ByZ7fkKSkNs"}
                         title={"Dharamender playing Cricket"}
                         player={"Dharamender Singh"}
                         sport={"Cricket"}

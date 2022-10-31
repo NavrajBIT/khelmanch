@@ -49,6 +49,7 @@ export const Talent = () => {
                         player={video.name}
                         sport={video.sport}
                         rating="3.5"
+                        coachName="Coach Priti Kaur"
                       /></span>
                     </Box>
                 </Box>

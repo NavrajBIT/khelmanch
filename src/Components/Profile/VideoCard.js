@@ -17,6 +17,7 @@ export const VideoCard = () => {
                         title={video.title}
                         player={video.name}
                         sport={video.sport}
+                        coachName="Coach Priti Kaur"
                         rating="3.5"
                       /></span>
                     </Box>

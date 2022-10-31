@@ -20,6 +20,11 @@ const KhelVideo = (props) => {
   const matches = useMediaQuery(theme.breakpoints.down('md'));
   const iframeStyle = matches ? {width: "270px",height: "150px",} : {width:"420px",height:"236px"}
   const mainBoxStyle = matches ? { margin: "0px 20px", display: "flex", flexDirection: "column", width: "280px"}:{ margin: "0px 20px", display: "flex", flexDirection: "column", width: "420px"}
+  const VideoTittleStyle = matches ? { fontFamily: 'Product Sans', fontStyle: "normal",fontWeight: "400", fontSize: "21.0538px", lineHeight: "27px"} : { fontFamily: 'Inter', fontStyle: "normal", fontWeight: "600", fontSize: "22.5482px", lineHeight: "32px "}
+  const PlayerNameStyle= matches ? { color: "#000000",textDecoration:"none",fontFamily: 'Inter', fontStyle: "normal",fontweight: "600", fontSize: "13px",lineHeight: "16px"}:{fontFamily: 'Inter', fontStyle: "normal",fontweight: "600", fontSize: "18.7902px",lineHeight: "23px", textDecoration:"none",color: "#000000"}
+  const CoachNameStyle= matches ? {fontFamily: 'Product Sans', fontStyle:" normal", fontWeight: "400", fontSize: "11.1211px", lineHeight: "13px"}:{fontFamily: 'Product Sans',fontStyle: "normal", fontWeight:" 400", fontSize: "16px", lineHeight: "19px"}
+  const SportName = matches ?{ height: "20px", width: "60px", fontSize: "10px", fontWeight: "700", color: "rgb(9, 9, 9)", fontFamily: "Poppins sans-serif", fontStyle: "normal", border: "1px solid rgb(9, 9, 9)", borderRadius: "5px",padding:"2px", textAlign: "center", marginBottom: "5px"}:{ height: "30px", width: "100px", fontSize: "15px", fontWeight: "700", color: "rgb(9, 9, 9)", fontFamily: "Poppins sans-serif", fontStyle: "normal", border: "1px solid rgb(9, 9, 9)", borderRadius: "5px", padding: "5px", textAlign: "center", marginTop: "1px", marginBottom: "10px"}
+  const ViewTypoStyle = matches ?{fontFamily: 'Inter', fontStyle: "normal", fontWeight: "500", fontSize: "14.0926px", lineHeight: "17px"}:{fontFamily: 'Inter', fontStyle: "normal", fontWeight: "500", fontSize: "14.0926px", lineHeight: "17px"}
   return (
     <>
   <Box style={mainBoxStyle}>
@@ -34,37 +39,41 @@ const KhelVideo = (props) => {
         ></iframe>
       </Box>
 
-     <Box style={{ display:" grid", gridTemplateColumns: "2fr 1fr", alignItems: "center" }} >
-          {!matches && <h3>{props.title}</h3> }
-          {matches && <h4>{props.title}</h4> }
-        <Box style={{ display: "flex", alignItems: "center", justifyContent: "right",}}>
-          30K
-          <img style={{ height: "20px", width: "20px", margin: "0px 0px 0px 10px", padding: "0px", justifyContent: "center", }} src={viewIcon} alt="" />
-        </Box>
-      </Box>  
+     <Box style={{ display:"flex",flexWrap:"wrap" }} >
+          <Typography sx={VideoTittleStyle}>{props.title}</Typography>
+      </Box> 
 
-      <Box style={{ display: "grid", gridTemplateColumns: "1fr 1fr"}}>
-        <Box >
-          <Box>
+      <Box style={{ display:"flex",marginTop:"30px",flexDirection:"row",justifyContent:"space-between"}}>
+ 
+          <Box style={{ display:"flex",flexDirection:"row",justifyContent:"space-between"}}>
+            <Box>
             <a
-            style={{ color: "black", textDecoration:"none", fontSize: "20px", fontWeight: "700",}}
+            style={PlayerNameStyle}
               onClick={() => {
                 navigate("/talent");
               }}
             >
               {props.player} 
             </a>
+            </Box>
+            <Box display="flex" flexDirection={"row"} mt={0.5}>
+              <Stack spacing={1}>
+                  <Rating name="half-rating-read" sx={{fontSize:"15px",color:"black"}} defaultValue={props.rating} precision={0.5} readOnly />
+              </Stack>
+            </Box>
           </Box>
-          <Typography style={{ height: "30px", width: "100px", fontSize: "15px", fontWeight: "700", color: "rgb(9, 9, 9)", fontFamily: "Poppins sans-serif", fontStyle: "normal", border: "1px solid rgb(9, 9, 9)", borderRadius: "5px", padding: "5px", textAlign: "center", marginTop: "5px", marginBottom: "10px"}}>{props.sport}</Typography>
-        </Box>
+          <Box>
+            <Typography style={SportName}>{props.sport}</Typography>
+          </Box>
+      </Box>
 
-        <Box mt="30px" marginLeft={"20px"} style={{textAlign:"right"}}>
-          <Box display="flex" flexDirection={"row"}>
-            <Stack spacing={1}>
-              <Rating name="half-rating-read" defaultValue={props.rating} precision={0.5} readOnly />
-          </Stack>
-            {! matches && <Typography mt='3px' marginLeft={"20px"}>{props.rating}/5</Typography>}
+
+      <Box sx={{display:"flex",flexDirection:"row",justifyContent:"space-between",mb:2}}>
+        <Box>
+          <Typography sx={CoachNameStyle}>{props.coachName}</Typography>
         </Box>
+        <Box>
+          <Typography sx={ViewTypoStyle}>30K Views</Typography>
         </Box>
       </Box>
     </Box>

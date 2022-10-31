@@ -55,7 +55,7 @@ export const ProfileMBVVideoPlayer = () => {
             Add Player
           </Button>
           <Button component="div" LinkComponent={Link} to="/addvideo" variant="contained" sx={{ width: "150px", height: "50px", background: "#ED842E", color: "white", fontStyle: "normal", latterSpacing: "0.5rem", }} >
-            Add Player
+            Add Video
           </Button>
         </Box>
         <Box sx={{margin:"auto",width:"360px",borderBottom:"1px solid rgba(0, 0, 0, 1)",mt:5}}>
@@ -81,6 +81,7 @@ export const ProfileMBVVideoPlayer = () => {
                         player={video.name}
                         sport={video.sport}
                         rating="3.5"
+                        coachName="Coach Priti Kaur"
                       /></span>
                     </Box>
                 </Box>

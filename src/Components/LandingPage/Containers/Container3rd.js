@@ -11,11 +11,11 @@ export const Container3rd = () => {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down('md'));
 
-  const AppBarStyle = matches ? {position:"static",background: "white",margin:"auto"} : {position:"static",margin: "auto",marginTop: 10,marginBottom: 8,height: "250px",width: "1645px",borderRadius: 8,border: "1px solid #ED842E",background: " transparent",alignItems:"center"}
-  const BoxStyle = matches ? {marginTop:"40px", display:"flex", flexDirection:"column" ,justifyContent:"space-between" ,alignItems:"center"} : {marginTop:"10px", paddingLeft:"150px",paddingRight:"150px", display:"flex", flexDirection:"row" ,justifyContent:"space-between" ,alignItems:"center"}
+  const AppBarStyle = matches ? {position:"static",background: "white",margin:"auto"} : {position:"static",margin: "auto",marginTop: 10,marginBottom: 8,height: "250px",width: "80vw",borderRadius: 8,border: "1px solid #ED842E",background: " transparent",alignItems:"center"}
+  const BoxStyle = matches ? {marginTop:"40px", display:"flex", flexDirection:"column" ,justifyContent:"space-between" ,alignItems:"center"} : {marginTop:"10px", paddingLeft:"10%",paddingRight:"150px", display:"flex", flexDirection:"row" ,justifyContent:"space-between" ,alignItems:"center"}
   const IconTypoBoxStyle = matches ? {paddingRight:"36px",width:"331px",height:"114px",borderRadius: 8,border: "1px solid #000000",display:"flex",flexDirection:"row-reverse"} : {}
-  const ImageStyle= matches ? {width: "150px", height: "150px",} : { width: "150px", height: "150px", marginLeft: "10px", marginTop: "1px", }
-  const ArrowStyle = matches ? {width: "45px", height: "45px", marginLeft: "27px", marginTop: "10px",transform: "rotate(90deg)" } : { width: "45px", height: "45px", marginLeft: "60px", marginTop: "5px" }
+  const ImageStyle= matches ? {width: "150px", height: "150px",} : { width: "10vw", height: "150px", marginLeft: "10px", marginTop: "1px", }
+  const ArrowStyle = matches ? {width: "45px", height: "45px", marginLeft: "27px", marginTop: "10px",transform: "rotate(90deg)" } : { width: "45px", height: "45px", marginLeft: "9%", marginTop: "5px" }
   return (
     <div>
         <Box  sx={AppBarStyle}>

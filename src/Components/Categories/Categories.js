@@ -28,10 +28,10 @@ const Categories = () => {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down('md'));
   const mainBoxStyle = matches ? {margin:"auto"}:{margin:"auto",padding:"10px"}
-  const HeaderBoxStyle = matches?{with:"360px" ,height:"350px",borderTop:"1px solid rgba(0, 0, 0, 0.2)",borderBottom:"1px solid rgba(0, 0, 0, 0.2)",margin:"auto",padding:"10px",backgroundColor:"white",marginTop:"20px",alignItems:"center",display:"flex",flexDirection:"column"}:{with:"1842px" ,height:"500px",borderBottom:"1px solid rgba(0, 0, 0, 0.2)",margin:"auto",padding:"10px",backgroundColor:"white",alignItems:"center",display:"flex",flexDirection:"column"}
-  const HeaderTypoStyle = matches ?{ color: "#FE8D32", fontFamily: "Times New Romen", fontStyle: "normal", fontWeight: "700", fontSize: "45px", }:{ color: "#FE8D32", fontFamily: "Times New Romen", fontStyle: "normal", fontWeight: "700", fontSize: "90px", }
-  const HeaderChildTypoStyle = matches ?{color: "black", fontFamily: "Product Sans", fontStyle: "normal", fontWeight: "400", fontSize: "18px",marginTop:"20px"}:{ color: "black", fontFamily: "Inter", fontStyle: "normal", fontWeight: "600", fontSize: "35px", }
-  const SpanStyle = matches ? { color: "black", marginLeft: "45px" }:{ color: "black", marginLeft: "100px" }
+  const HeaderBoxStyle = matches?{with:"360px" ,height:"350px",borderTop:"1px solid rgba(0, 0, 0, 0.2)",borderBottom:"1px solid rgba(0, 0, 0, 0.2)",margin:"auto",padding:"10px",backgroundColor:"white",marginTop:"20px",alignItems:"center",display:"flex",flexDirection:"column"}:{mt:"20px",with:"90vw" ,height:"500px",borderBottom:"1px solid rgba(0, 0, 0, 0.2)",margin:"auto",padding:"10px",backgroundColor:"white",alignItems:"center",display:"flex",flexDirection:"column"}
+  const HeaderTypoStyle = matches ?{ color: "#FE8D32", fontFamily: "Times New Romen", fontStyle: "normal", fontWeight: "700", fontSize: "45px", }:{ color: "#FE8D32", fontFamily: "Times New Romen", fontStyle: "normal", fontWeight: "700", fontSize: "4vw", }
+  const HeaderChildTypoStyle = matches ?{color: "black", fontFamily: "Product Sans", fontStyle: "normal", fontWeight: "400", fontSize: "18px",marginTop:"20px"}:{ color: "black", fontFamily: "Inter", fontStyle: "normal", fontWeight: "600", fontSize: "2vw", marginLeft: "5%"}
+  const SpanStyle = matches ? { color: "black", marginLeft: "45px" }:{ color: "black", marginLeft: "21%" }
   return (
     <>
     <Box sx={mainBoxStyle}>
@@ -56,7 +56,7 @@ const Categories = () => {
       </Box>
 
 
-      {!matches && <Box sx={{display:"flex",flexDirection:"row",width:"1842px",height:"100%",margin:"auto"}}>
+      {!matches && <Box sx={{display:"flex",flexDirection:"row",width:"100vw",height:"100%",margin:"auto"}}>
         <Box sx={{width:"15%",height:"100%",background:"white"}}>
           <List
             sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}

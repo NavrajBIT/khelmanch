@@ -14,7 +14,7 @@ import {AddPlayer} from "./Components/Profile/AddPlayer";
 
 function App() {
   return (
-    <div style={{ position: "relative" }}>
+    <div style={{  }}>
       <HashRouter>
         <UserState>
           <Navbar />

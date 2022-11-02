@@ -47,7 +47,7 @@ export const Navbar = () => {
     };
 
   return (
-    <Box sx={{ flexGrow: 1, width: "auto" }}>
+    <Box sx={{width: "auto" }}>
       <AppBar
         position="sticky"
         sx={{ background: "#fff", color: "#000", boxShadow: "none" }}

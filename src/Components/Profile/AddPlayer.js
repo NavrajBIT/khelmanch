@@ -36,24 +36,26 @@ export const AddPlayer = () => {
         }))};
 
     const mainBoxStyle = matches ? {paddingTop:"80px",margin:"auto",width:"360px",borderTop:"1px solid rgba(0, 0, 0, 0.2)",marginTop:"30px"}:{}
-    const UploadBoxStyle = matches?{margin:"auto",width:"250px" ,height:"70px" ,display:"flex", flexDirection:"column", justifyContent:"center",alignItems:"center", border: "1px solid #FE8D32", backgroundColor:"rgba(0, 0, 0, 0)"}:{width:"481px" ,height:"481px" ,display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center", borderRadius: "100%", border: "1px solid black", marginTop: "100px", backgroundColor:"rgba(0, 0, 0, 0.05)", marginLeft: "700px"}
-    const TypoBoxStyle = matches ? {position:"absolute",fontFamily:"inherit", fontStyle:"normal" ,fontWeight:"700" ,fontSize:"25px", lineHeight:"42px", color:"black",marginBottom:"150px" }:{ fontFamily:"inherit", fontStyle:"normal" ,fontWeight:"600" ,fontSize:"35px", lineHeight:"42px", color:"#FE8D32", marginBottom:"30px" }
-    const inputFileBox = matches ?{marginLeft:"45px",paddingTop:"18px"}:{marginLeft:"50px"}
-    const PlayerDetailsBox = matches ? {width:"360px", padding:"10px",}:{width:"1127px" ,height:"556px", marginLeft:"410px"}
-    const PlayerDetailTypo= matches ?{width:"100%",borderRadius:"20px"}:{width:"100%",border: "2px solid black",borderRadius:"10px"}
+    const UploadBoxStyle = matches?{margin:"auto",width:"250px" ,height:"70px" ,display:"flex", flexDirection:"column", justifyContent:"center",alignItems:"center", border: "1px solid #FE8D32", backgroundColor:"rgba(0, 0, 0, 0)"}:{width:"26vw" ,height:"30vh" ,display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center", borderRadius: "10px", border: "1px dotted black", marginTop: "100px", backgroundColor:"rgba(0, 0, 0, 0.05)", marginLeft: "35%"}
+    const TypoBoxStyle = matches ? {position:"absolute",fontFamily:"inherit", fontStyle:"normal" ,fontWeight:"700" ,fontSize:"25px", lineHeight:"42px", color:"black",marginBottom:"150px" }:{ fontFamily:"inherit", fontStyle:"normal" ,fontWeight:"600" ,fontSize:"2vw", lineHeight:"42px", color:"#FE8D32", marginBottom:"30px" }
+    const inputFileBox = matches ?{marginLeft:"45px",paddingTop:"18px"}:{marginLeft:"25%"}
+    const PlayerDetailsBox = matches ? {width:"360px", padding:"10px",}:{width:"70vw" ,height:"556px", marginLeft:"15%"}
+    const PlayerDetailTypo= matches ?{width:"100%",borderRadius:"20px"}:{width:"100%",borderRadius:"10px"}
     const PlayerDetailsBoxChild = matches ? {display:"flex", flexDirection:"column", justifyContent:"space-between"}:{display:"flex", flexDirection:"row", justifyContent:"space-between"}
-    const PlayerDetailTypo2= matches ?{width:"100%",borderRadius:"20px"}:{width:"30%",border: "2px solid black",borderRadius:"10px"}
-    const selectStyle = matches ? {width: "100%",marginTop:"10px"}:{width: "360px", height: "50px",border: "2px solid black", borderRadius: "10px", marginTop: "20px", }
-    const PlayerDetailTypo3= matches ?{width:"100%",borderRadius:"20px"}:{width:"49%",border: "2px solid black",borderRadius:"10px"}
+    const PlayerDetailTypo2= matches ?{width:"100%",borderRadius:"20px"}:{width:"30%",borderRadius:"10px"}
+    const selectStyle = matches ? {width: "100%",marginTop:"10px"}:{width: "22vw", height: "50px", }
+    const PlayerDetailTypo3= matches ?{width:"100%",borderRadius:"20px"}:{width:"49%",borderRadius:"10px"}
     const spanStyle = matches ? {}:{marginLeft:"20px"}
-    const textAreaStyle = matches ? {height: "121px", width: "100%",borderRadius: "10px",  marginTop: "5px", }:{ width: "1121px",borderRadius: "10px", marginTop: "5px", }
-    const ButtonStyle = matches ? { fontWeight: "bold", fontFamily: "Inter", fontStyle: "normal", marginLeft: "50px", height: "50px", width: "250px", borderRadius: "50px", marginTop: "100px", }:{ marginTop: "80px", fontWeight: "bold", fontFamily: "Inter", fontStyle: "normal", marginLeft: "850px", height: "50px", width: "250px", borderRadius: "50px", marginTop: "55px", }
+    const textAreaStyle = matches ? {height: "121px", width: "100%",borderRadius: "10px",  marginTop: "5px", }:{ width: "70vw",borderRadius: "10px", marginTop: "5px", }
+    const ButtonStyle = matches ? { fontWeight: "bold", fontFamily: "Inter", fontStyle: "normal", marginLeft: "50px", height: "50px", width: "250px", borderRadius: "50px", marginTop: "100px", }:{ marginTop: "80px", fontWeight: "bold", fontFamily: "Inter", fontStyle: "normal", marginLeft: "45%", height: "50px", width: "250px", borderRadius: "50px", marginTop: "55px", }
     return (
     <div>
     <Box sx={mainBoxStyle}>
 
-        {!matches && <Box width={1700} marginLeft={13} marginTop={10} display={"flex"} flexDirection={"row"} justifyContent={"space-between"} borderBottom={"3px solid #FE8D32"} paddingBottom={2} >
-        <Typography marginLeft={95} variant="h4" fontFamily={"inherit"} fontStyle="normal" fontWeight="700" fontSize="35px" lineHeight={"42px"} color={"#FE8D32"} >
+        {!matches && 
+        
+        <Box width={"90vw"} marginLeft={"5%"} marginTop={10} display={"flex"} flexDirection={"row"} justifyContent={"space-between"} borderBottom={"3px solid #FE8D32"} paddingBottom={2} >
+        <Typography marginLeft={"42%"} variant="h4" fontFamily={"inherit"} fontStyle="normal" fontWeight="700" fontSize="35px" lineHeight={"42px"} color={"#FE8D32"} >
         Add Player</Typography>
         </Box> }
 
@@ -66,8 +68,8 @@ export const AddPlayer = () => {
                 <input type="file" id="profilepic" />
                 </Box>
                 {!matches && <Typography>
-                    <h3 style={{marginLeft:"90px"}}>OR</h3><br></br>
-                    <span style={{marginRight:"40px"}}>Drag and Drop in this area</span>
+                    <h3 style={{marginLeft:"45%"}}>OR</h3><br></br>
+                    <span style={{}}>Drag and Drop in this area</span>
                 </Typography>}
              </Box>
 
@@ -77,7 +79,7 @@ export const AddPlayer = () => {
             <TextField style={PlayerDetailTypo} name='name' onChange={handleChange} value={inputs.name} type='text' placeholder='Player Name' margin='normal'/><br />
             <Box sx={PlayerDetailsBoxChild} >
                 <TextField style={PlayerDetailTypo2}name='age' onChange={handleChange} value={inputs.age} type='text' placeholder='Player age in Years' margin='normal'/>
-                <Box>
+                <Box sx={{mt:2.5}}>
                     <FormControl fullWidth>
                     <InputLabel id="demo-simple-select-label"> Select Gender</InputLabel>
                     <Select labelId="demo-simple-select-label" id="demo-simple-select" style={selectStyle} value={''} label="Sort by" onChange={(e) => {}} >
@@ -87,7 +89,7 @@ export const AddPlayer = () => {
                     </Select>
                     </FormControl>
                 </Box>
-                <Box>
+                <Box sx={{mt:2.5}}>
                     <FormControl fullWidth>
                     <InputLabel id="demo-simple-select-label"> Select Sports</InputLabel>
                     <Select labelId="demo-simple-select-label" id="demo-simple-select"style={selectStyle} value={''} label="Sort by" onChange={(e) => {}} >
@@ -106,7 +108,7 @@ export const AddPlayer = () => {
             </textarea> */}
              <TextField
             style={textAreaStyle}
-            placeholder="MultiLine with rows: 2 and rowsMax: 4"
+            placeholder="Player Bio"
             multiline
             rows={7}
             maxRows={8}

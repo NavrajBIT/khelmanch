@@ -9,9 +9,9 @@ import { useTheme } from '@mui/material/styles';
 export const Container4th = () => {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down('md'));
-  const CardStyle = matches ? { width: "360px", height: "255px", margin: "auto", positions: "absolute", mt: 10, boxShadow: "5px 5px 10px #ccc", ":hover:": { boxShadow: "20px 20px 40px #ccc" }, backgroundImage: `url(${image4})`, } : { width: "1646px", height: "670px", margin: "auto", positions: "absolute", mt: 0, boxShadow: "5px 5px 10px #ccc", ":hover:": { boxShadow: "20px 20px 40px #ccc" }, backgroundImage: `url(${image4})`, }
-  const ImageStyle = matches ? { width: "118px", height: "102px", marginLeft: "20px", marginTop: "20px", } : { width: "350px", height: "350px", marginLeft: "20px", marginTop: "20px", }
-  const TypographyStyle = matches ? { color: "white", fontFamily: "Product Sans", fontSize: "normal", fontSize: "20px", fontWeight: "400", } : { color: "white", fontFamily: "Product Sans", fontSize: "normal", fontSize: "45px", fontWeight: "400", } 
+  const CardStyle = matches ? { width: "360px", height: "255px", margin: "auto", positions: "absolute", mt: 10, boxShadow: "5px 5px 10px #ccc", ":hover:": { boxShadow: "20px 20px 40px #ccc" }, backgroundImage: `url(${image4})`, } : { width: "90vw", height: "670px", margin: "auto", positions: "absolute", mt: 0, boxShadow: "5px 5px 10px #ccc", ":hover:": { boxShadow: "20px 20px 40px #ccc" }, backgroundImage: `url(${image4})`, }
+  const ImageStyle = matches ? { width: "118px", height: "102px", marginLeft: "20px", marginTop: "20px", } : { width: "20vw", height: "40vh", marginLeft: "20px", marginTop: "20px", }
+  const TypographyStyle = matches ? { color: "white", fontFamily: "Product Sans", fontSize: "normal", fontSize: "20px", fontWeight: "400", } : { color: "white", fontFamily: "Product Sans", fontSize: "normal", fontSize: "2.5vw", fontWeight: "400", } 
   return (
     <div>
         <Card sx={CardStyle} >

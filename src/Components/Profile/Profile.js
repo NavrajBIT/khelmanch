@@ -47,25 +47,27 @@ const Profile = () => {
         coach={true}
         />
 
-        {matches &&<><ProfileMBVVideoPlayer />
+         {matches &&<><ProfileMBVVideoPlayer />
         </>}
         
-        {!matches && <> <Box width={1700} marginLeft={13} marginTop={10} display={"flex"} flexDirection={"row"} justifyContent={"space-between"} borderBottom={"3px solid #FE8D32"} paddingBottom={2} >
-        <Typography fontFamily={"inherit"} fontStyle="normal" fontWeight="600" fontSize="35px" lineHeight={"42px"} >
+        {!matches && <> 
+
+        <Box width={"90vw"} marginLeft={"6%"} marginTop={10} display={"flex"} flexDirection={"row"} justifyContent={"space-between"} borderBottom={"3px solid #FE8D32"} paddingBottom={2} >
+        <Typography fontFamily={"inherit"} fontStyle="normal" fontWeight="600" fontSize="2vw" lineHeight={"42px"} >
         Players added by you</Typography>
         <Button LinkComponent={Link} to="/addplayer" variant="contained" sx={{ width: "150px", height: "50px", background: "#ED842E", color: "white", fontStyle: "normal", marginLeft: "15px", latterSpacing: "0.5rem", }} >
           + Add players
           </Button>
         </Box>
-        <Box sx={{ width: "1700px", height: "100%", margin: "auto", positions: "absolute", padding: "20px", }} >
+        <Box sx={{ width: "90vw", height: "100%", margin: "auto", positions: "absolute", padding: "20px", }} >
 
          <PlayerCard />
 
 
         </Box>
 
-        <Box width={1700} marginLeft={13} marginTop={10} display={"flex"} flexDirection={"row"} justifyContent={"space-between"} borderBottom={"3px solid #FE8D32"} paddingBottom={2} >
-        <Typography fontFamily={"inherit"} fontStyle="normal" fontWeight="600" fontSize="35px" lineHeight={"42px"} >
+        <Box width={"90vw"} marginLeft={"6%"} marginTop={10} display={"flex"} flexDirection={"row"} justifyContent={"space-between"} borderBottom={"3px solid #FE8D32"} paddingBottom={2} >
+        <Typography fontFamily={"inherit"} fontStyle="normal" fontWeight="600" fontSize="2vw" lineHeight={"42px"} >
         Videos added by you</Typography>
         <Button LinkComponent={Link} to="/addvideo" variant="contained" sx={{ width: "150px", height: "50px", background: "#ED842E", color: "white", fontStyle: "normal", marginLeft: "15px", latterSpacing: "0.5rem", }} >
           + Add Video
@@ -73,12 +75,12 @@ const Profile = () => {
         </Box>
 
 
-        <Box width={1700} marginLeft={13} marginTop={10} display={"flex"} flexDirection={"row"} justifyContent={"space-between"} borderBottom={"1px solid black"} paddingBottom={2} >
+        <Box width={"90vw"} marginLeft={"6%"} marginTop={10} display={"flex"} flexDirection={"row"} justifyContent={"space-between"} borderBottom={"1px solid black"} paddingBottom={2} >
         <Typography fontFamily={"inherit"} fontStyle="normal" fontWeight="600" fontSize="35px" lineHeight={"42px"} >
               <Tabs value={value} onChange={(e, val) => setValue(val)}>
-              <Tab LinkComponent={Link} to="/" style = {{ color:" #000000", fontFamaily: "Inter", fontStyle: "normal", fontWeight: "300", fontSize: "15px", }}label="Videos" />
+              <Tab LinkComponent={Link} to="" style = {{ color:" #000000", fontFamaily: "Inter", fontStyle: "normal", fontWeight: "300", fontSize: "15px", }}label="Videos" />
               
-              <Tab LinkComponent={Link} to="/" style = {{ color:" #000000", fontFamaily: "Inter", fontStyle: "normal", fontWeight: "300", fontSize: "15px", }}label="Playlist" />
+              <Tab LinkComponent={Link} to="" style = {{ color:" #000000", fontFamaily: "Inter", fontStyle: "normal", fontWeight: "300", fontSize: "15px", }}label="Playlist" />
               </Tabs>
         </Typography>
           <Box sx={{ minWidth: 120 }}>
@@ -93,12 +95,13 @@ const Profile = () => {
           </Box>
         </Box>
 
-        <Box sx={{ width: "1700px", height: "548px", margin: "auto", positions: "absolute", padding: "10px", marginBottom: "700px", }} >
+        <Box sx={{ width: "90vw", height: "auto", margin: "auto", positions: "absolute", padding: "10px", }} >
           <VideoCard />
         </Box>
-        <Button LinkComponent={Link} to="/explore" variant="outlined" sx={{ background: "white", color: "black", fontWeight: "bold", fontFamily: "Product Sans", fontStyle: "normal", alignItems: "center", marginLeft: "850px", height: "50px", width: "250px", borderRadius: "10px", border: "2px solid black", marginTop: "55px", }} >
+       <Button LinkComponent={Link} to="/explore" variant="outlined" sx={{ background: "white", color: "black", fontWeight: "bold", fontFamily: "Product Sans", fontStyle: "normal", alignItems: "center", marginLeft: "45%", height: "50px", width: "250px", borderRadius: "10px", border: "2px solid black", marginTop: "5%", }} >
           Load more
-        </Button> </>}
+        </Button>
+        </>} 
     </>
   );
 };

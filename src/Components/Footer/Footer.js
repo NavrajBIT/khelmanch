@@ -30,23 +30,25 @@ const Footer = () => {
 
   const mainBoxStyle = matches ? {width: "100%", height: "1550px", display: "flex", justifyContent: "space-around", background: "#262626", color: "#fff", marginTop: "100px", flexDirection: "column", } : {width: "100%", height: "600px", display: "flex",justifyContent: "space-around", background: "#262626", color: "#fff", marginTop: "100px", flexDirection: "row",}
   const parentBoxStyle= matches ? {width: "100%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column",} :{ width: "33%", display: "flex", justifyContent: "center", flexDirection: "column",  marginBottom: "10px", mt:"10px" }
+  const parentBoxStyleContact= matches ? {width: "100%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column",} :{border: "1px solid #fff", width: "33%", display: "flex", justifyContent: "center", flexDirection: "column",  marginBottom: "10px", mt:"10px" }
   const childBoxStyle = matches ? {width: "100%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column"} :{display:"flex" ,flexDirection:"column", alignItems:"center" ,justifyContent:"center" ,padding:"3px" ,margin:"auto" ,borderRadius:"5px", marginBottom:"2px"}
-  const TypographyStyle = matches ? {fontFamily: "Inter", fontStyle: "normal", fontWeight: "700", fontSize: "30px", lineHeight: "22px", textAlign: "center",marginBottom:"20px" } : {fontFamily:"ui-monospace", padding:"3px",fontSize: "30px",fontWeight: "700", marginRight:"200px" }
-  const inputStyle = matches ? {background: "white", width: "320px" } :{background: "white", width: "350px" }
-  const textareaStyle = matches ? {height: "187px", width: "320px"  } :{height: "187px", width: "350px"  }
-  const buttonStyle = matches ? {borderRadius: 0,marginTop: 3 ,width:"245px",height:"55px"} :{borderRadius: 1, marginTop: 3 ,marginRight: 23.5}
+  const TypographyStyle = matches ? {fontFamily: "Inter", fontStyle: "normal", fontWeight: "700", fontSize: "30px", lineHeight: "22px", textAlign: "center",marginBottom:"20px" } : {fontFamily:"ui-monospace", padding:"3px",fontSize: "1.3vw",fontWeight: "700", marginRight:"40%" }
+  const inputStyle = matches ? {background: "white", width: "320px" } :{background: "white", width: "20vw" }
+  const textareaStyle = matches ? { width: "320px" ,backgroundColor:"white" } :{ width: "20vw" ,backgroundColor:"white" }
+  const buttonStyle = matches ? {borderRadius: 0,marginTop: 3 ,width:"245px",height:"55px"} :{borderRadius: 1, marginTop: 3 ,marginRight:"36%",width:"8vw",height:"5vh",fontSize:"0.7vw"}
 
-  const parentBoxStyle2 = matches ? {width: "320px", height: "360px", display: "flex", justifyContent: "center", flexDirection: "column", marginBottom: "50px", border: "1px solid #fff", borderRadius: "5px",mt:5} :{width: "480px", height: "360px", display: "flex", justifyContent: "center", flexDirection: "column", marginBottom: "50px", border: "1px solid #fff", borderRadius: "5px", }
+  const parentBoxStyle2 = matches ? {width: "320px", height: "360px", display: "flex", justifyContent: "center", flexDirection: "column", marginBottom: "50px", border: "1px solid #fff", borderRadius: "5px",mt:5} :{width: "30vw", height: "360px", display: "flex", justifyContent: "center", flexDirection: "column", marginBottom: "50px", border: "1px solid #fff", borderRadius: "5px", }
   const TypographyStyle2= matches ? {fontFamily:"ui-monospace", padding:"3px",fontSize: "25px",fontWeight: "600", } : {fontFamily:"ui-monospace", padding:"3px", marginRight:"45px",fontSize: "25px",fontWeight: "600", }
-  const childBoxStyle2 = matches ? {width: "320px", } :{width: "500px", }
+  const childBoxStyle2 = matches ? {width: "320px", } :{width: "25vw", }
   const TypographyStyle3= matches ?{fontFamily:"Inter", fontStyle:"normal" ,fontWeight:"100" ,fontSize:"7px"}:{fontFamily:"Inter", fontStyle:"normal" ,fontWeight:"300" ,fontSize:"15px"}
-  
+  const ContactDetailsStylePhone= matches ?{ marginRight: "55px", fontSize: "15px", fontWeight: "500", }:{ marginRight: "100px", fontSize: "1.3vw", fontWeight: "500", }
+  const ContactDetailsStyleEmail= matches ?{ marginRight: "21px", fontSize: "15px", fontWeight: "500", }:{ marginRight: "21px", fontSize: "1.3vw", fontWeight: "500", }
   const handleSubmit = (e) => {
       e.preventDefault();
       
     };
   return (
-    <div>
+    <Box sx={{width: "auto" }}>
     <Box sx={mainBoxStyle} >
         {/* Box -1 Contact Us */}
 
@@ -60,7 +62,13 @@ const Footer = () => {
 
               <TextField style={inputStyle} name="name" onChange={handleChange} value={inputs.name} type="text" placeholder="Name" margin="normal" />
               <TextField style={inputStyle} name="email" onChange={handleChange} value={inputs.email} type="email" placeholder="Email" margin="normal" />
-              <textarea style={textareaStyle} name="message" onChange={handleChange} value={inputs.message} type="text" placeholder="Write a Message" margin="normal" ></textarea>
+              <TextField
+                style={textareaStyle}
+                placeholder="Write a Message"
+                multiline
+                rows={7}
+                maxRows={8}
+              />
               <Button type="submit" variant="contained" sx={buttonStyle} color="warning" >
                 Send Message
               </Button>
@@ -69,30 +77,27 @@ const Footer = () => {
           
         </Box>
 
-        {/* Box -2 */}
-
-        <Box sx={parentBoxStyle}>
-          {!matches&&<><Typography fontFamily={"ui-monospace"} variant="h5" padding={0} marginRight={37} marginBottom={3} >
+        <Box sx={parentBoxStyle} >
+        {!matches&&<><Typography fontFamily={"ui-monospace"} variant="h5" padding={0} marginRight={37} marginBottom={3} >
             Contact Details
           </Typography></>}
-
           <Box sx={parentBoxStyle2}>
-            <Typography style={{ marginRight: "55px", fontSize: "21px", fontWeight: "500", }} fontFamily={"Inter"} fontStyle={"normal"} padding={3} textAlign={"center"} >
-            <LocalPhoneIcon sx={{ color: "#ED842E"}}  style={{ marginRight: "5px"}} /> +91 1234567890
-            </Typography>
-            <Typography style={{ marginRight: "55px", fontSize: "21px", fontWeight: "500", }} fontFamily={"Inter"} fontStyle={"normal"} padding={3} textAlign={"center"} >
-              <LocalPhoneIcon sx={{ color: "#ED842E" }} style={{ marginRight: "5px" }} /> +91 1234567890
-            </Typography>
-            <Typography style={{ fontSize: "21px", fontWeight: "500" }} fontFamily={"Inter"} fontStyle={"normal"} padding={3} textAlign={"center"} >
-              <EmailIcon sx={{ color: "#ED842E" }} style={{ marginRight: "5px" }} /> khelmanch@gmail.com
-            </Typography>
-            <Typography style={{ fontSize: "21px", fontWeight: "500" }} fontFamily={"Inter"} fontStyle={"normal"} padding={3} textAlign={"center"} >
-              <EmailIcon sx={{ color: "#ED842E" }} style={{ marginRight: "5px" }} /> khelmanch@gmail.com
-            </Typography>
-          </Box>
-        </Box>
+            <Typography style={ContactDetailsStylePhone} fontFamily={"Inter"} fontStyle={"normal"} padding={3} textAlign={"center"} >
+              <LocalPhoneIcon sx={{ color: "#ED842E"}}  style={{ marginRight: "5px"}} /> +91 1234567890
+              </Typography>
+              <Typography style={ContactDetailsStylePhone}  fontFamily={"Inter"} fontStyle={"normal"} padding={3} textAlign={"center"} >
+                <LocalPhoneIcon sx={{ color: "#ED842E" }} style={{ marginRight: "5px" }} /> +91 1234567890
+              </Typography>
+              <Typography style={ContactDetailsStyleEmail}  fontFamily={"Inter"} fontStyle={"normal"} padding={3} textAlign={"center"} >
+                <EmailIcon sx={{ color: "#ED842E" }} style={{ marginRight: "5px" }} /> khelmanch@gmail.com
+              </Typography>
+              <Typography style={ContactDetailsStyleEmail}  fontFamily={"Inter"} fontStyle={"normal"} padding={3} textAlign={"center"} >
+                <EmailIcon sx={{ color: "#ED842E" }} style={{ marginRight: "5px" }} /> khelmanch@gmail.com
+              </Typography>
+            </Box>
 
-        {/* Box -3 */}
+
+        </Box>
 
         <Box sx={parentBoxStyle} >
           <Typography sx={TypographyStyle2} >
@@ -108,7 +113,8 @@ const Footer = () => {
             <span style={{ fontFamily: "Inter", fontStyle: "normal", fontWeight: "300", }} >Made By</span>
             <img height={"100px"} width={"200px"}  marginRight={"10px"} alt="BITLOGO" src={BITlogo} />
           </Box>
- 
+
+
         </Box>
       </Box>
 
@@ -120,7 +126,7 @@ const Footer = () => {
           </Typography>
         </Box>
       </Box>
-    </div>
+    </Box>
   );
 }
 

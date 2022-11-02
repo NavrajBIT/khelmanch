@@ -19,22 +19,22 @@ export const AddVideo = () => {
     const navigate = useNavigate();
 
 
-  const UploadBoxStyle =  matches ? {margin:"auto",width:"250px" ,height:"70px" ,display:"flex", flexDirection:"column", justifyContent:"center",alignItems:"center", border: "1px solid #FE8D32", backgroundColor:"rgba(0, 0, 0, 0)"}:{width:"1127px" ,height:"556px" ,display:"flex", flexDirection:"column", justifyContent:"center",alignItems:"center", borderRadius: "10px", border: "1px solid black", marginTop: "50px", backgroundColor:"rgba(0, 0, 0, 0.05)", marginLeft: "400px"}
-  const TypoBoxStyle = matches ? {position:"absolute",fontFamily:"inherit", fontStyle:"normal" ,fontWeight:"700" ,fontSize:"25px", lineHeight:"42px", color:"black",marginBottom:"150px" }:{ fontFamily:"inherit", fontStyle:"normal" ,fontWeight:"600" ,fontSize:"35px", lineHeight:"42px", color:"#FE8D32", marginBottom:"3px" }
+  const UploadBoxStyle =  matches ? {margin:"auto",width:"250px" ,height:"70px" ,display:"flex", flexDirection:"column", justifyContent:"center",alignItems:"center", border: "1px solid #FE8D32", backgroundColor:"rgba(0, 0, 0, 0)"}:{width:"50vw" ,height:"50vh" ,display:"flex", flexDirection:"column", justifyContent:"center",alignItems:"center", borderRadius: "10px", border: "1px solid black", marginTop: "50px", backgroundColor:"rgba(0, 0, 0, 0.05)", marginLeft: "25%"}
+  const TypoBoxStyle = matches ? {position:"absolute",fontFamily:"inherit", fontStyle:"normal" ,fontWeight:"700" ,fontSize:"25px", lineHeight:"42px", color:"black",marginBottom:"150px" }:{ fontFamily:"inherit", fontStyle:"normal" ,fontWeight:"600" ,fontSize:"2vw", lineHeight:"42px", color:"#FE8D32", marginBottom:"50px" }
   const VideoTypoTitle = matches ?{ fontFamily:"inherit", fontStyle:"normal", fontWeight:"600" ,fontSize:"18px" ,lineHeight:"30px", color:"black"}:{fontFamily:"inherit", fontStyle:"normal", fontWeight:"600" ,fontSize:"25px" ,lineHeight:"42px", color:"black"}
   const mainBoxStyle = matches ? {paddingTop:"80px",margin:"auto",width:"360px",borderTop:"1px solid rgba(0, 0, 0, 0.2)",marginTop:"30px"}:{}
   const inputFileBox = matches ?{marginLeft:"45px",paddingTop:"18px"}:{marginLeft:"12px"}
-  const textAreaStyle = matches ? {height: "121px", width: "320px",borderRadius: "10px",  marginTop: "5px", }:{ width: "1121px",borderRadius: "10px", marginTop: "5px", }
-  const VideoTitleBox = matches ?{margin:"auto",marginLeft:"18px",marginTop:"35px"}:{marginLeft:"400px", marginTop:"50px"}
-  const selectorMainBoxStyle = matches ?{padding:"20px",width:"360px" ,marginTop:"90px" ,display:"flex", flexDirection:"row", justifyContent:"space-between" }:{width:"900px" ,marginLeft:"500px" ,marginTop:"30px" ,display:"flex", flexDirection:"row", justifyContent:"space-between" }
-  const selectStyle = matches ? {width: "150px", height: "40px", borderRadius: "10px",  marginTop: "5px", }:{width: "200px", height: "50px", borderRadius: "10px", border: "2px solid black", marginTop: "5px", }
-  const ButtonStyle = matches ? { marginTop: "80px", fontWeight: "bold", fontFamily: "Inter", fontStyle: "normal", marginLeft: "50px", height: "50px", width: "250px", borderRadius: "50px", marginTop: "55px", }:{ marginTop: "80px", fontWeight: "bold", fontFamily: "Inter", fontStyle: "normal", marginLeft: "850px", height: "50px", width: "250px", borderRadius: "50px", marginTop: "55px", }
+  const textAreaStyle = matches ? {height: "121px", width: "320px",borderRadius: "10px",  marginTop: "5px", }:{ width: "50vw",borderRadius: "10px", marginTop: "5px", }
+  const VideoTitleBox = matches ?{margin:"auto",marginLeft:"18px",marginTop:"35px"}:{marginLeft:"25%", marginTop:"50px"}
+  const selectorMainBoxStyle = matches ?{padding:"20px",width:"360px" ,marginTop:"90px" ,display:"flex", flexDirection:"row", justifyContent:"space-between" }:{width:"50vw" ,marginLeft:"25%" ,marginTop:"30px" ,display:"flex", flexDirection:"row", justifyContent:"space-between" }
+  const selectStyle = matches ? {width: "150px", height: "40px", borderRadius: "10px",  marginTop: "5px", }:{width: "15vw", height: "50px", borderRadius: "10px", marginTop: "5px", }
+  const ButtonStyle = matches ? { marginTop: "80px", fontWeight: "bold", fontFamily: "Inter", fontStyle: "normal", marginLeft: "50px", height: "50px", width: "250px", borderRadius: "50px", marginTop: "55px", }:{ marginTop: "80px", fontWeight: "bold", fontFamily: "Inter", fontStyle: "normal", marginLeft: "44%", height: "50px", width: "250px", borderRadius: "50px", marginTop: "55px", }
   return (
     <div>
       <Box sx={mainBoxStyle}>
         {!matches &&<Box
-        width={1700}
-        marginLeft={13}
+        width={"90vw"}
+        marginLeft={"4.5%"}
         marginTop={10}
         display={"flex"}
         flexDirection={"row"}
@@ -43,12 +43,11 @@ export const AddVideo = () => {
         paddingBottom={2}
         >
         <Typography
-          marginLeft={95}
-          variant="h4"
+          marginLeft={"46%"}
           fontFamily={"inherit"}
           fontStyle="normal"
           fontWeight="700"
-          fontSize="35px"
+          fontSize="2vw"
           lineHeight={"42px"}
           color={"#FE8D32"}
         >

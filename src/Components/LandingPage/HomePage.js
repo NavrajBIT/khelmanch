@@ -17,8 +17,8 @@ export const HomePage = () => {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down('md'));
 
-  const TypographyStyle1= matches ? {marginTop:"30px",fontFamily:"Times New Roman",fontWeight:"700" ,fontSize:"20.75px", fontStyle:"normal", lineHeight: "25.17px",color: "#000000",letterSpacing: "-0.02em", } : {color: "#000000",fontFamily: "Times New Roman",fontStyle: "normal",fontWeight: "700",fontSize: "51.1px",lineHeight: "59px",margin:"auto" }
-  const TypographyStyle2= matches ? {fontSize:"300", color: "black", fontFamily: "Oswald", fontStyle: "normal", fontSize: "30px", }:{ color: "black", fontFamily: "Inter", fontStyle: "normal", fontSize: "64px", }
+  const TypographyStyle1= matches ? {marginTop:"30px",fontFamily:"Times New Roman",fontWeight:"700" ,fontSize:"20.75px", fontStyle:"normal", lineHeight: "25.17px",color: "#000000",letterSpacing: "-0.02em", } : {color: "#000000",fontFamily: "Times New Roman",fontStyle: "normal",fontWeight: "700",fontSize: "3.01vw",lineHeight: "59px",margin:"auto" }
+  const TypographyStyle2= matches ? {fontSize:"300", color: "black", fontFamily: "Oswald", fontStyle: "normal", fontSize: "30px", }:{ color: "black", fontFamily: "Inter", fontStyle: "normal", fontSize: "3.5vw", }
   
 
   return (
@@ -26,24 +26,24 @@ export const HomePage = () => {
       <Box display="flex" justifyContent="center" alignItems="center" flexDirection="column" border="ActiveBorder">
         <Container1st />
 
-         <Container2nd />
+       <Container2nd />
 
-        <Typography sx={TypographyStyle1}>
+       <Typography sx={TypographyStyle1}>
             Help the Budding Talent of India
         </Typography>
 
-        <Container3rd />
-        <Container4th />
+         <Container3rd />
+         <Container4th />
 
-         <Typography style={TypographyStyle2} margin="auto" marginTop={5} >
+          <Typography style={TypographyStyle2} margin="auto" marginTop={5} >
             Follow the steps to join us
-        </Typography>
+          </Typography>
         <Container5th />
 
         <Container6th />
-        { !matches && <Typography style={{ color: "#FE8D32", fontFamily: "Times New Romen", fontStyle: "normal", fontWeight: "700", fontSize: "90px", }} margin="auto" mt={30} >
+          { !matches && <Typography style={{ color: "#FE8D32", fontFamily: "Times New Romen", fontStyle: "normal", fontWeight: "700", fontSize: "5vw", }} margin="auto" mt={30} >
           View and Rate <br></br>
-          <span style={{ color: "black", marginLeft: "100px" }}>
+          <span style={{ color: "black", marginLeft: "19%" }}>
             the videos
           </span>
         </Typography>}

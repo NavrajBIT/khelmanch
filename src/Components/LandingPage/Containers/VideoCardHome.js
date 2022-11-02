@@ -43,7 +43,7 @@ export const VideoCardHome = () => {
                     </Box>
                 </Box>
 
-                <Box style={{ marginTop:"15px", width:"320px", border: "1px solid #000000", backgroundColor:"white", borderRadius: "10px",margin:"auto" }}> 
+                <Box style={{ marginTop:"30px", width:"320px", border: "1px solid #000000", backgroundColor:"white", borderRadius: "10px",margin:"auto" }}> 
                   <Box key={"Mahender playing Cricket"} style={{marginTop: "30px"}}>
                       <span style={{color:'black'}}><KhelVideo
                        src={"https://www.youtube.com/embed/Ctt-tZ_9KpY"}

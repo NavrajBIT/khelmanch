@@ -18,10 +18,10 @@ const KhelVideo = (props) => {
   }
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down('md'));
-  const iframeStyle = matches ? {width: "270px",height: "150px",} : {width:"420px",height:"236px"}
-  const mainBoxStyle = matches ? { margin: "0px 20px", display: "flex", flexDirection: "column", width: "280px"}:{ margin: "0px 20px", display: "flex", flexDirection: "column", width: "420px"}
-  const VideoTittleStyle = matches ? { fontFamily: 'Product Sans', fontStyle: "normal",fontWeight: "400", fontSize: "21.0538px", lineHeight: "27px"} : { fontFamily: 'Inter', fontStyle: "normal", fontWeight: "600", fontSize: "22.5482px", lineHeight: "32px "}
-  const PlayerNameStyle= matches ? { color: "#000000",textDecoration:"none",fontFamily: 'Inter', fontStyle: "normal",fontweight: "600", fontSize: "13px",lineHeight: "16px"}:{fontFamily: 'Inter', fontStyle: "normal",fontweight: "600", fontSize: "18.7902px",lineHeight: "23px", textDecoration:"none",color: "#000000"}
+  const iframeStyle = matches ? {width: "270px",height: "150px",} : {width:"22vw",height:"30vh"}
+  const mainBoxStyle = matches ? { margin: "0px 20px", display: "flex", flexDirection: "column", width: "280px"}:{ margin: "0px 20px", display: "flex", flexDirection: "column", width: "22vw"}
+  const VideoTittleStyle = matches ? { fontFamily: 'Product Sans', fontStyle: "normal",fontWeight: "400", fontSize: "21.0538px", lineHeight: "27px"} : { fontFamily: 'Inter', fontStyle: "normal", fontWeight: "600", fontSize: "1.5vw", lineHeight: "32px "}
+  const PlayerNameStyle= matches ? { color: "#000000",textDecoration:"none",fontFamily: 'Inter', fontStyle: "normal",fontweight: "600", fontSize: "13px",lineHeight: "16px"}:{fontFamily: 'Inter', fontStyle: "normal",fontweight: "600", fontSize: "1vw",lineHeight: "23px", textDecoration:"none",color: "#000000"}
   const CoachNameStyle= matches ? {fontFamily: 'Product Sans', fontStyle:" normal", fontWeight: "400", fontSize: "11.1211px", lineHeight: "13px"}:{fontFamily: 'Product Sans',fontStyle: "normal", fontWeight:" 400", fontSize: "16px", lineHeight: "19px"}
   const SportName = matches ?{ height: "20px", width: "60px", fontSize: "10px", fontWeight: "700", color: "rgb(9, 9, 9)", fontFamily: "Poppins sans-serif", fontStyle: "normal", border: "1px solid rgb(9, 9, 9)", borderRadius: "5px",padding:"2px", textAlign: "center", marginBottom: "5px"}:{ height: "30px", width: "100px", fontSize: "15px", fontWeight: "700", color: "rgb(9, 9, 9)", fontFamily: "Poppins sans-serif", fontStyle: "normal", border: "1px solid rgb(9, 9, 9)", borderRadius: "5px", padding: "5px", textAlign: "center", marginTop: "1px", marginBottom: "10px"}
   const ViewTypoStyle = matches ?{fontFamily: 'Inter', fontStyle: "normal", fontWeight: "500", fontSize: "14.0926px", lineHeight: "17px"}:{fontFamily: 'Inter', fontStyle: "normal", fontWeight: "500", fontSize: "14.0926px", lineHeight: "17px"}

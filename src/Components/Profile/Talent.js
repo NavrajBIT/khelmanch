@@ -2,10 +2,49 @@ import React, { useContext, useState } from "react";
 import "./Profile.css";
 import { useNavigate } from "react-router-dom";
 import KhelVideo from "../Video/KhelVideo";
+import { useParams } from "react-router-dom";
+import { getAPI, putAPI } from "../Scripts/apiCalls";
+import { useEffect } from "react";
+import UserContext from "../../Context/UserContext";
 
 export const Talent = () => {
+  const user = useContext(UserContext);
+  const { talentId } = useParams();
+  const [status, setStatus] = useState("");
+  const [uploadedFile, setUploadedFile] = useState();
   const [isEditting, setIsEditting] = useState(false);
+  const [playerData, setPlayerData] = useState({});
   const navigate = useNavigate();
+
+  useEffect(() => {
+    poppulateData();
+  }, []);
+
+  const poppulateData = () => {
+    getAPI("player/" + talentId).then((res) => {
+      console.log(res);
+      if (res !== "Server error") {
+        let newplayerData = res;
+        getAPI("sport").then((res) => {
+          if (res !== "Server error") {
+            res.map((sport) => {
+              if (parseInt(sport["id"]) === parseInt(newplayerData["sport"])) {
+                newplayerData.sport = sport["name"];
+              }
+            });
+
+            getAPI("creator/" + newplayerData.profileCreator).then((res) => {
+              if (res !== "Server error") {
+                newplayerData.creatorAccount = newplayerData.profileCreator;
+                newplayerData.profileCreator = res.name;
+                setPlayerData(newplayerData);
+              }
+            });
+          }
+        });
+      }
+    });
+  };
 
   const videosData = [
     {
@@ -94,8 +133,16 @@ export const Talent = () => {
           </button>
           <div className="editform">
             <label htmlFor="profilepic">Profilepic:</label>
-            <input type="file" id="profilepic" />
+            <input
+              type="file"
+              id="profilepic"
+              onClick={(e) => {
+                console.log(e.target.files);
+                setUploadedFile(e.target.files[0]);
+              }}
+            />
           </div>
+
           <div className="editform">
             <label htmlFor="name">Name:</label>
             <input type="text" id="name" placeholder="Enter name" />
@@ -111,75 +158,91 @@ export const Talent = () => {
           </div>
           <div className="editform">
             <label htmlFor="">Age:</label>
-            <input type="number" placeholder="age in years" />
+            <input type="number" placeholder="age in years" id="age" />
           </div>
           <div className="editform">
             <label htmlFor="">Gender</label>
-            <select name="" id="">
-              <option value="">Male</option>
-              <option value="">Female</option>
-              <option value="">Other</option>
+            <select name="" id="gender">
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
             </select>
           </div>
           <div className="editform">
-            <label htmlFor="">Father's name:</label>
-            <input type="text" placeholder="Enter Father's name" />
+            <label htmlFor="">Location:</label>
+            <input
+              type="text"
+              placeholder="Enter Talent's location"
+              id="location"
+            />
           </div>
-          <div className="editform">
-            <label htmlFor="">Mother's name:</label>
-            <input type="text" placeholder="Enter Mother's name" />
-          </div>
+
           <div className="editform">
             <label htmlFor="">Sport</label>
 
-            <select name="" id="">
-              <option value="">Cricket</option>
-              <option value="">Volleyball</option>
-              <option value="">Badminton</option>
-              <option value="">Basketball</option>
-              <option value="">Hockey</option>
-              <option value="">Athletics</option>
+            <select name="" id="sport">
+              <option value="1">Cricket</option>
+              <option value="2">Volleyball</option>
+              <option value="3">Badminton</option>
+              <option value="4">Basketball</option>
+              <option value="5">Hockey</option>
+              <option value="6">Athletics</option>
+              <option value="7">E-Sports</option>
             </select>
           </div>
-          <button onClick={() => setIsEditting(false)}>Save</button>
+          <button
+            onClick={() => {
+              console.log(uploadedFile);
+              let formData = new FormData();
+              formData.append("name", document.getElementById("name").value);
+              formData.append(
+                "description",
+                document.getElementById("description").value
+              );
+              formData.append("age", document.getElementById("age").value);
+              formData.append("profileCreator", playerData.creatorAccount);
+              formData.append("playerid", playerData.playerid);
+              formData.append(
+                "gender",
+                document.getElementById("gender").value
+              );
+              formData.append(
+                "location",
+                document.getElementById("location").value
+              );
+              formData.append("sport", document.getElementById("sport").value);
+              formData.append("profilepic", uploadedFile);
+
+              putAPI("player/" + playerData.playerid, formData).then((res) => {
+                console.log(res);
+                poppulateData();
+              });
+            }}
+          >
+            Save
+          </button>
         </div>
       </div>
     );
   };
-
-  // name : "",
-  // age :"",
-  // sex :" ",
-  // fname :"",
-  // mname :"",
-  // address :"",
-  // skilledSports : "",
-  // achievements :" ",
-  // journeyWriteUp:"",
-  // creatorName:"",
-  // creatorWalletAddress :""
 
   return (
     <>
       <div className="profilepage">
         <div className="profileSection">
           <div className="imageSection">
-            <img src={profileUrl} alt="" />
+            <img src={playerData.profilepic} alt={playerData.name} />
           </div>
           <div className="dataSection">
-            <h1>Mahender Singh</h1>
-            <h2>Hockey Player</h2>
+            <h1>{playerData.name}</h1>
+            <h2>{playerData.sport}</h2>
             <div className="playerdetails">
               <h3>Gender:</h3>
-              <h3>Male</h3>
+              <h3>{playerData.gender}</h3>
             </div>
             <div className="playerdetails">
-              <h3>Father&apos;s Name:</h3>
-              <h3> Jitender Singh</h3>
-            </div>
-            <div className="playerdetails">
-              <h3>Mother&apos;s Name:</h3>
-              <h3>Suneeta Kaur</h3>
+              <h3>Location:</h3>
+              <h3>{playerData.location}</h3>
             </div>
 
             <div className="playerdetails">
@@ -189,25 +252,16 @@ export const Talent = () => {
                   navigate("/profile");
                 }}
               >
-                Coach Priti Kaur
+                {playerData.profileCreator}
               </a>
             </div>
 
-            <h3>
-              The difference between the old ballplayer and the new ballplayer
-              is the jersey. The old ballplayer cared about the name on the
-              front. The new ballplayer cares about the name on the back."
-              sports caption for Instagram Witness the Power. The harder you
-              work, the harder it is to surrender. "One day of practice is like
-              one day of clean living. It doesn't do you any good." What makes
-              something special is not just what you have to gain, but what you
-              feel there is to lose. A champion is afraid of losing. Everyone
-              else is afraid of winning. A snooker game mixes ritual with
-              geometry
-            </h3>
-            <button onClick={() => setIsEditting(true)}>
-              <h2>Edit Profile</h2>
-            </button>
+            <h3>{playerData.description}</h3>
+            {playerData.creatorAccount === user.userAccount && (
+              <button onClick={() => setIsEditting(true)}>
+                <h2>Edit Profile</h2>
+              </button>
+            )}
           </div>
         </div>
         {isEditting && <EditProfile />}
@@ -216,13 +270,13 @@ export const Talent = () => {
           {videosData.map((video) => {
             return (
               <div className="videocontainer" key={video.title}>
-                <KhelVideo
+                {/* <KhelVideo
                   src={video.src}
                   title={"Mahender Singh playing Hockey"}
                   player={"Mahender Singh"}
                   sport={"Hockey"}
                   rating="3.5"
-                />
+                /> */}
               </div>
             );
           })}

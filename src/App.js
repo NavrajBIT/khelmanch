@@ -20,7 +20,7 @@ function App() {
             <Route path="/explore" element={<Categories />} />
             <Route path="/createtalent" element={<Create />} />
             <Route path="/profile" element={<Profile />} />
-            <Route path="/talent" element={<Talent />} />
+            <Route path="/talent/:talentId" element={<Talent />} />
           </Routes>
           <Footer />
         </UserState>

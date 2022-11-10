@@ -9,20 +9,14 @@ const KhelVideo = (props) => {
   return (
     <div className="khelvideocontainer">
       <div>
-        <iframe
-          width="420"
-          height="236"
-          src={props.src}
-          title={props.title}
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        ></iframe>
+        <video width="420" height="236" controls>
+          <source src={props.src} type="video/mp4" />
+        </video>
       </div>
       <div className="videotitlecontainer">
         <h3>{props.title}</h3>
         <div className="viewscontainer">
-          301,012
+          {props.views}
           <img src={viewIcon} alt="" />
         </div>
       </div>
@@ -42,11 +36,11 @@ const KhelVideo = (props) => {
 
         <div className="ratinginfo">
           <div className="ratingstars">
-            <img src={ratingStar} alt="" />
-            <img src={ratingStar} alt="" />
-            <img src={ratingStar} alt="" />
-            <img src={ratingStar} alt="" />
-            <img src={ratingStar} alt="" />
+            <img src={ratingStar} alt="rate" />
+            <img src={ratingStar} alt="rate" />
+            <img src={ratingStar} alt="rate" />
+            <img src={ratingStar} alt="rate" />
+            <img src={ratingStar} alt="rate" />
           </div>
           {props.rating}/5
         </div>

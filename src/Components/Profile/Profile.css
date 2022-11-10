@@ -28,6 +28,27 @@
   border-radius: 150px;
 }
 
+.profileratinginfo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.profileratingstars {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profileratingstars img {
+  width: 25px;
+  margin: 0px;
+}
+.profileratingstars img:hover {
+  animation: scaleup 0.1s;
+  transform: scale(1.1);
+}
+
 .editprofile {
   display: flex;
   flex-direction: column;

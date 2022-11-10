@@ -14,7 +14,7 @@
   text-align: right;
 }
 
-.ratingstars:hover {
+.ratingstars img:hover {
   animation: scaleup 0.3s;
   transform: scale(1.1);
 }
